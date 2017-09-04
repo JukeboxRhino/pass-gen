@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Deterministic Password Generator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body> 
+        <div id="app">
+            <h1>Password Generator</h1>
+            <input v-model="key">
+            <br>
+            <input type="number" v-model="nonce">
+            <pre>{{forge.util.encode64(sha512(key+nonce).getBytes()).substring(0,12)}}</pre>
+            <pre>{{forge.util.encode64(sha512(key+nonce).getBytes()).substring(0,20)}}</pre>
+        </div>
+        <script src="forge.min.js"></script>
+        <script src="vue.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
