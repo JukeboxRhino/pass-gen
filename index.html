@@ -7,7 +7,7 @@
     <body> 
         <div id="app">
             <h1>Password Generator</h1>
-            <input v-model="key">
+            <input type="password" v-model="key">
             <br>
             <input type="number" v-model="nonce">
             <pre>{{forge.util.encode64(sha512(key+nonce).getBytes()).substring(0,12)}}</pre>
